@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DEV3 AI Site Health &amp; Security Log Analyst – Documentation</title>
+<style>
+:root { --brand:#4f46e5; --text:#111827; --muted:#4b5563; --line:#e5e7eb; --soft:#f5f5ff; }
+* { box-sizing:border-box; }
+body { margin:0; font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; color:var(--text); background:#fff; }
+header { background:linear-gradient(135deg,#4f46e5,#7c3aed); color:#fff; padding:40px 16px; }
+header .wrap, main { max-width:920px; margin:0 auto; }
+header h1 { margin:0 0 8px; font-size:28px; line-height:1.25; }
+header p { margin:0; opacity:.92; }
+nav { background:var(--soft); border-bottom:1px solid var(--line); padding:12px 16px; }
+nav ul { max-width:920px; margin:0 auto; padding:0; list-style:none; display:flex; flex-wrap:wrap; gap:6px 16px; font-size:14px; }
+nav a { color:var(--brand); }
+main { padding:24px 16px 64px; }
+h2 { margin:40px 0 12px; font-size:22px; border-bottom:1px solid var(--line); padding-bottom:6px; }
+h3 { margin:24px 0 8px; font-size:17px; }
+code, pre { font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:13px; }
+code { background:#f3f4f6; padding:1px 5px; border-radius:4px; }
+pre { background:#1f2328; color:#e6edf3; padding:14px; border-radius:8px; overflow:auto; }
+table { width:100%; border-collapse:collapse; font-size:14px; display:block; overflow-x:auto; }
+th, td { text-align:left; border-bottom:1px solid var(--line); padding:8px 10px; vertical-align:top; }
+th { background:#f9fafb; }
+.note { background:var(--soft); border-left:4px solid var(--brand); padding:10px 14px; border-radius:0 8px 8px 0; }
+img { max-width:100%; border:1px solid var(--line); border-radius:8px; }
+.shots { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; }
+figure { margin:0; } figcaption { font-size:13px; color:var(--muted); }
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<h1>DEV3 AI Site Health &amp; Security Log Analyst for WordPress</h1>
+<p>Version 1.0.0 · Requires WordPress 6.0+ and PHP 7.4+ · Made by DEV3 Technologies</p>
+</div></header>
+<nav><ul>
+<li><a href="#install">Installation</a></li><li><a href="#gemini">Gemini API key</a></li><li><a href="#features">Features</a></li>
+<li><a href="#privacy">Privacy &amp; masking</a></li><li><a href="#fixes">One-click fixes</a></li><li><a href="#alerts">Alerts &amp; reports</a></li>
+<li><a href="#settings">Settings</a></li><li><a href="#cli">WP-CLI</a></li><li><a href="#hooks">Hooks</a></li><li><a href="#faq">FAQ</a></li><li><a href="#changelog">Changelog</a></li>
+</ul></nav>
+<main>
+<p>The plugin collects the signals WordPress and PHP already produce (error logs, Site Health, logins, changes, updates, cron, slow queries, file checksums), groups them into <strong>issues</strong> with counts and first/last seen, ranks them in a health score, and explains each issue in plain words. It is <strong>read-only by default</strong>.</p>
+
+<div class="shots">
+<figure><img src="screenshots/1-overview.png" alt="Overview screen with health score"><figcaption>Overview</figcaption></figure>
+<figure><img src="screenshots/2-issue-explained.png" alt="Issue explained by DEV3 AI"><figcaption>Issue explained by DEV3 AI</figcaption></figure>
+<figure><img src="screenshots/3-security.png" alt="Security screen"><figcaption>Security</figcaption></figure>
+<figure><img src="screenshots/4-integrity.png" alt="File integrity screen"><figcaption>File integrity</figcaption></figure>
+</div>
+
+<h2 id="install">Installation</h2>
+<ol>
+<li>In WordPress go to <em>Plugins → Add New → Upload Plugin</em>, choose <code>dev3-ai-site-health-analyst.zip</code>, install and activate.</li>
+<li>Open <strong>DEV3 AI Site Health</strong> in the admin menu and click <strong>Scan now</strong>. Checks then run every hour in the background (WP-Cron).</li>
+<li>To collect PHP errors, enable logging in <code>wp-config.php</code> (the Overview shows this hint when logging is off):
+<pre>define( 'WP_DEBUG', true );
+define( 'WP_DEBUG_LOG', WP_CONTENT_DIR . '/../logs/debug.log' ); // outside the web root is safest
+define( 'WP_DEBUG_DISPLAY', false );</pre>
+Or point <em>Settings → Custom log path</em> to your host's PHP error log (must end in <code>.log</code> or <code>.txt</code>).</li>
+</ol>
+
+<h2 id="gemini">Google Gemini API key (optional)</h2>
+<ol>
+<li>Create a key at <a href="https://aistudio.google.com/app/apikey">Google AI Studio</a>.</li>
+<li>Paste it under <em>API Config</em> and click <em>Validate</em>. The key is stored encrypted (AES-256-GCM) and never sent to the browser. You can also define <code>DEV3SH_GEMINI_API_KEY</code> in <code>wp-config.php</code>.</li>
+<li>Pick models (default <code>gemini-2.5-flash</code>), and optionally set a monthly budget cap. <em>Usage Logs</em> shows requests, tokens and estimated cost.</li>
+</ol>
+<p class="note">Without a key, or with AI switched off, everything works: every issue has a built-in, rule-based explanation.</p>
+
+<h2 id="features">Features</h2>
+<h3>PHP error log</h3>
+<p>Finds the log from <code>WP_DEBUG_LOG</code>, <code>php.ini error_log</code> or a custom path. Each run reads only the new bytes (default max 2 MB), never half-written lines. Rotation (<code>debug.log.1</code>, dated files) and truncation are detected by size, inode and a hash of the first bytes, so no line is counted twice. Fatal, parse, warning, notice, deprecated and WordPress database errors are parsed, with stack traces, file/line and the plugin or theme responsible. The <em>Error log</em> screen shows the newest entries with a level filter and warns if the log file is web-reachable.</p>
+<h3>Site Health</h3>
+<p>Runs the WordPress Site Health tests daily (including loopback, wordpress.org and HTTPS tests, optional). Critical results become high issues, recommended ones low issues, with the test's own advice as fix steps.</p>
+<h3>Security log</h3>
+<p>Logs failed logins (wp-login, XML-RPC, REST), logins after failures and administrator logins, plus suspicious requests: path traversal, <code>/etc/passwd</code> probes, SQL injection and script injection patterns, sensitive files (<code>.env</code>, backups, <code>.git</code>, phpinfo), author and REST user enumeration, and 404 floods. Only matching requests write to the database, capped at 30 writes per IP per minute. IPs can be anonymised. Brute force (N failures per IP per hour) becomes a high issue.</p>
+<h3>Changes</h3>
+<p>Plugin activations, deactivations, installs, updates and deletions, theme switches and core updates are logged with the user. A daily snapshot comparison catches changes made outside WordPress (FTP, SSH, deployments).</p>
+<h3>Updates, cron and slow queries</h3>
+<p>Pending core/plugin/theme updates, many inactive plugins and old PHP become issues that resolve themselves when fixed. Cron health reports overdue tasks, tasks whose code was removed and a WP-Cron that stopped running. With <code>SAVEQUERIES</code> on, queries slower than the threshold (default 250 ms) are grouped by shape and attributed to a plugin.</p>
+<h3>File integrity</h3>
+<p>A background job compares core files with <code>api.wordpress.org</code> checksums (changed, missing and unknown PHP files in <code>wp-admin</code>/<code>wp-includes</code>) and every wordpress.org plugin with <code>downloads.wordpress.org/plugin-checksums</code>. Premium and custom plugins are reported as "not verifiable", never as changed. Schedule: weekly (default), daily or manual.</p>
+<h3>Issues and health score</h3>
+<p>Repeated messages are grouped by a fingerprint (numbers, addresses and timestamps collapsed), with count, first/last seen and the last three samples. Issues can be resolved (they re-open when they come back), ignored, or bulk-updated. The score is <code>100 × e^(−penalty/180)</code> (critical 25, high 10, medium 4, low 1; at most 30 points per source), capped at 69 while a critical issue is open.</p>
+<h3>DEV3 AI explanations</h3>
+<p>In an issue, <strong>Explain with DEV3 AI</strong> returns a summary, likely cause, impact, numbered steps, who should fix it (you, your developer or your host) and urgency. You can ask follow-up questions, and "Explain critical &amp; high with DEV3 AI" explains all of them in the background. The AI may propose a one-click fix, but only fixes that the server considers applicable are shown, and you still preview and confirm them.</p>
+
+<h2 id="privacy">Privacy &amp; masking</h2>
+<p>Everything sent to Google Gemini passes through the redactor first. Click <em>What is sent?</em> in any issue to see the exact masked payload.</p>
+<table><tr><th>Masked</th><th>Becomes</th></tr>
+<tr><td>API keys (Google, Stripe, OpenAI, GitHub, Slack, AWS), JWTs, Bearer/Basic tokens</td><td><code>[api-key]</code>, <code>[jwt]</code>, <code>[token]</code></td></tr>
+<tr><td>password / secret / token / key / salt values in URLs, JSON, PHP defines, headers, cookies</td><td><code>[secret]</code></td></tr>
+<tr><td>Database users, hosts and DSNs</td><td><code>[db-user]</code>, <code>[db-host]</code>, <code>[dsn]</code></td></tr>
+<tr><td>Absolute paths</td><td>relative WordPress paths, or <code>[path]/file.php</code></td></tr>
+<tr><td>Your site address, emails, IPv4/IPv6, card and phone numbers, user names</td><td><code>[site]</code>, <code>[email]</code>, <code>[ip]</code>, <code>[card]</code>, <code>[phone]</code>, <code>[user]</code></td></tr>
+</table>
+<p>The security log is included in WordPress's personal data export and erase tools. Events are kept for 30 days by default.</p>
+
+<h2 id="fixes">One-click fixes</h2>
+<p>Off by default. Turn on <em>Settings → Allow one-click fixes</em> (with a confirmation). Then each fix shows what changes, issues a single-use token valid for 10 minutes and needs you to tick "I understand" before <em>Apply fix</em>. Every fix is logged under <em>Reports &amp; alerts → Fix history</em> with Undo.</p>
+<table><tr><th>Fix</th><th>What it does</th><th>Undo</th></tr>
+<tr><td>Deactivate plugin</td><td>Deactivates the plugin blamed by an error</td><td>Re-activates it</td></tr>
+<tr><td>Restore core file</td><td>Downloads the official file, verifies its md5 against wordpress.org, backs up the current file to <code>uploads/dev3sh-backups</code>, writes it</td><td>Restores the backup</td></tr>
+<tr><td>Block IP</td><td>Returns 403 to that address for N days (never your own IP)</td><td>Unblock</td></tr>
+<tr><td>Remove scheduled task</td><td>Unschedules a cron hook that no code handles</td><td>Re-schedules it</td></tr>
+<tr><td>Disable XML-RPC</td><td>Turns off xmlrpc.php methods</td><td>Turns them back on</td></tr>
+</table>
+
+<h2 id="alerts">Alerts &amp; weekly report</h2>
+<p>Alerts (each at most once per cool-down, default 6 h): new fatal PHP error, new critical issue, changed core/plugin files, failed logins per hour, suspicious requests per hour, score below a threshold. The weekly report (day and hour in site time) contains the score and trend, new/resolved issues, top issues, security summary with /24-anonymised addresses, updates, integrity and cron, plus an optional DEV3 AI summary paragraph. Preview it and send it now from <em>Reports &amp; alerts</em>. Use an SMTP plugin for reliable delivery.</p>
+
+<h2 id="settings">Settings</h2>
+<table><tr><th>Setting</th><th>Default</th></tr>
+<tr><td>Collectors (each source on/off)</td><td>all on</td></tr>
+<tr><td>Custom log path / read at most per run</td><td>empty / 2048 KB</td></tr>
+<tr><td>Collect notices / deprecations</td><td>on / on</td></tr>
+<tr><td>Auto-resolve PHP issues not seen for</td><td>14 days</td></tr>
+<tr><td>Security logger / admin logins / anonymise IPs</td><td>on / on / off</td></tr>
+<tr><td>Brute-force threshold / 404 flood threshold</td><td>10 per hour / 20 per 5 min</td></tr>
+<tr><td>Keep events for</td><td>30 days</td></tr>
+<tr><td>Integrity check</td><td>weekly</td></tr>
+<tr><td>Slow query threshold</td><td>250 ms</td></tr>
+<tr><td>Allow one-click fixes / block days</td><td>off / 30</td></tr>
+</table>
+
+<h2 id="cli">WP-CLI</h2>
+<pre>wp dev3sh scan [--source=php,updates]
+wp dev3sh issues [--status=open] [--format=table|json|csv]
+wp dev3sh integrity
+wp dev3sh report</pre>
+
+<h2 id="hooks">Hooks for developers</h2>
+<table><tr><th>Hook</th><th>Type</th><th>Use</th></tr>
+<tr><td><code>dev3sh_log_path( $path, $source )</code></td><td>filter</td><td>Read a different log file</td></tr>
+<tr><td><code>dev3sh_redact( $masked, $original )</code></td><td>filter</td><td>Add masking rules</td></tr>
+<tr><td><code>dev3sh_mask_literals( $strings )</code></td><td>filter</td><td>Extra words to mask (e.g. a company name)</td></tr>
+<tr><td><code>dev3sh_security_writes_per_minute( $n )</code></td><td>filter</td><td>Write cap per IP (30)</td></tr>
+<tr><td><code>dev3sh_trusted_ip_header( '' )</code></td><td>filter</td><td>Client IP header behind a proxy/CDN, e.g. <code>HTTP_CF_CONNECTING_IP</code></td></tr>
+<tr><td><code>dev3sh_cron_grace( $seconds )</code></td><td>filter</td><td>When a task counts as overdue</td></tr>
+<tr><td><code>dev3sh_site_health_skip( $ids )</code></td><td>filter</td><td>Skip Site Health tests</td></tr>
+<tr><td><code>dev3sh_core_integrity( $result )</code></td><td>filter</td><td>Allow known custom core files</td></tr>
+<tr><td><code>dev3sh_prompt_explain_issue( $prompt )</code></td><td>filter</td><td>Change the AI prompt</td></tr>
+<tr><td><code>dev3sh_issue_created( $id, $data )</code></td><td>action</td><td>React to new issues (Slack, ticketing…)</td></tr>
+<tr><td><code>dev3sh_fix_applied( $plan, $event_id )</code></td><td>action</td><td>Audit applied fixes</td></tr>
+<tr><td><code>dev3sh_manage_capability( 'manage_options' )</code></td><td>filter</td><td>Who can use the plugin</td></tr>
+</table>
+
+<h2 id="faq">FAQ</h2>
+<h3>Will it slow down my site?</h3><p>No. Normal requests only run a few regex checks on the URL. Collection runs hourly in the background; the integrity check runs as a chunked background job.</p>
+<h3>Does it change anything on my site?</h3><p>No, unless you allow one-click fixes; each still needs your confirmation and can be undone.</p>
+<h3>Why is a plugin "not verifiable"?</h3><p>Only plugins hosted on wordpress.org have official checksums. Premium plugins are never reported as changed.</p>
+<h3>My host uses a proxy/CDN and all IPs look the same.</h3><p>Use the <code>dev3sh_trusted_ip_header</code> filter before blocking addresses.</p>
+<h3>Where is my data stored?</h3><p>In two tables (<code>wp_dev3sh_issues</code>, <code>wp_dev3sh_events</code>) and a few options. Enable "Delete all data when the plugin is uninstalled" to remove everything.</p>
+
+<h2 id="changelog">Changelog</h2>
+<p><strong>1.0.0</strong> – Initial release.</p>
+</main>
+</body>
+</html>

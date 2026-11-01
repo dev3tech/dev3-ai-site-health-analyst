@@ -1,0 +1,2276 @@
+# Copyright (C) 2026 DEV3 Technologies
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: DEV3 AI Site Health & Security Log Analyst for WordPress 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/dev3-ai-site-health-analyst\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-10-25T05:00:30+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: dev3-ai-site-health-analyst\n"
+
+#. Plugin Name of the plugin
+#: dev3-ai-site-health-analyst.php
+msgid "DEV3 AI Site Health & Security Log Analyst for WordPress"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: dev3-ai-site-health-analyst.php
+msgid "https://dev3.tech/item/dev3-ai-site-health-analyst"
+msgstr ""
+
+#. Description of the plugin
+#: dev3-ai-site-health-analyst.php
+msgid "Collects PHP errors, Site Health, security events, updates, cron, slow queries and file integrity, groups them into issues and explains each with DEV3 AI."
+msgstr ""
+
+#. Author of the plugin
+#: dev3-ai-site-health-analyst.php
+msgid "DEV3 Technologies"
+msgstr ""
+
+#. Author URI of the plugin
+#: dev3-ai-site-health-analyst.php
+msgid "https://dev3.tech"
+msgstr ""
+
+#: includes/Admin/Admin_Page.php:48
+#: includes/Admin/Admin_Page.php:81
+msgid "DEV3 AI Site Health"
+msgstr ""
+
+#: includes/Admin/Admin_Page.php:65
+#: includes/Report/Weekly_Report.php:230
+msgid "Health score"
+msgstr ""
+
+#. translators: %d: count.
+#: includes/Admin/Admin_Page.php:68
+#, php-format
+msgid "%d critical issue"
+msgid_plural "%d critical issues"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d: count.
+#: includes/Admin/Admin_Page.php:70
+#, php-format
+msgid "%d open issue"
+msgid_plural "%d open issues"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d: count.
+#: includes/Admin/Admin_Page.php:72
+#, php-format
+msgid "%d failed login (24 h)"
+msgid_plural "%d failed logins (24 h)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/Admin/Admin_Page.php:74
+msgid "Open DEV3 AI Site Health"
+msgstr ""
+
+#: includes/Admin/Admin_Page.php:110
+msgid "Settings"
+msgstr ""
+
+#: includes/Ai/Explainer.php:91
+#: includes/Ai/Explainer.php:155
+#: includes/Rest/Admin_Controller.php:238
+#: includes/Rest/Admin_Controller.php:291
+msgid "Issue not found."
+msgstr ""
+
+#: includes/Ai/Explainer.php:111
+msgid "DEV3 AI returned an incomplete answer. Try again."
+msgstr ""
+
+#: includes/Ai/Explainer.php:159
+msgid "Type a question first."
+msgstr ""
+
+#: includes/Ai/Explainer.php:177
+msgid "DEV3 AI returned an empty answer. Try again."
+msgstr ""
+
+#: includes/Ai/Explainer.php:227
+msgid "Every open critical and high issue already has a DEV3 AI explanation."
+msgstr ""
+
+#: includes/Analyze/Fingerprint.php:142
+msgid "WordPress core"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: includes/Analyze/Fingerprint.php:148
+#, php-format
+msgid "Plugin: %s"
+msgstr ""
+
+#. translators: %s: theme name.
+#: includes/Analyze/Fingerprint.php:153
+#, php-format
+msgid "Theme: %s"
+msgstr ""
+
+#. translators: %s: must-use plugin file.
+#: includes/Analyze/Fingerprint.php:157
+#, php-format
+msgid "Must-use plugin: %s"
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:27
+msgid "the code that wrote this message"
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:39
+msgid "Software on your site has a newer version. Updates fix bugs and, very often, security holes that attackers already know about."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:40
+msgid "The developer released a new version after you installed this one."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:42
+msgid "Make a backup of files and database (or check that your host keeps daily backups)."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:43
+msgid "Open Dashboard → Updates and read the changelog for big version jumps."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:44
+msgid "Update, then open the home page, a product/post page and the checkout or contact form to confirm everything works."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:45
+msgid "Turn on automatic updates for plugins you trust so this does not pile up again."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:51
+msgid "Plugins you are not using are still on the server. Their code can still be attacked even while inactive."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:52
+msgid "Plugins were deactivated instead of deleted."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:54
+msgid "Go to Plugins → Inactive."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:55
+msgid "Delete every plugin you do not plan to use again (settings of most plugins are kept in the database)."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:58
+msgid "Your server runs an old PHP version that no longer gets security fixes and is slower than current versions."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:59
+msgid "The hosting account was set up years ago and never upgraded."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:61
+msgid "Check in Tools → Site Health → Info that all your plugins support PHP 8.1+."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:62
+msgid "Switch the PHP version in your hosting panel (or ask your host) on a staging copy first."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:63
+msgid "Watch this plugin's Error log for new warnings for a day after the switch."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:70
+msgid "WordPress runs scheduled tasks (publishing scheduled posts, sending emails, backups, update checks) with WP-Cron. Some of these tasks are late or will never run."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:71
+msgid "WP-Cron only runs when someone visits the site, or it is disabled with DISABLE_WP_CRON and no server cron job replaces it. A blocked loopback request can also stop it."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:73
+msgid "Check Tools → Site Health for \"loopback request\" or \"scheduled event\" problems."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:74
+msgid "If DISABLE_WP_CRON is set, ask your host to add a server cron job that calls wp-cron.php every 5 minutes."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:75
+msgid "Look at the System screen of this plugin to see which tasks are late and which plugin owns them."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:81
+msgid "A scheduled task is still registered, but no plugin handles it any more. It does nothing but keeps being rescheduled."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:82
+msgid "The plugin that created it was removed without cleaning up."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:84
+msgid "Check that you really removed the plugin that owned this task (the hook name usually starts with its name)."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:85
+msgid "Remove the task with the one-click fix (needs confirmation) or with the WP Crontrol plugin."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:94
+msgid "A database query takes long enough to slow page loads. Repeated slow queries make the whole site feel sluggish and can overload the database server."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:95
+msgid "Usually a missing index, a query over a large table (for example postmeta or options with many autoloaded rows), or a plugin running a heavy report on every page."
+msgstr ""
+
+#. translators: %s: component label.
+#: includes/Analyze/Knowledge_Base.php:98
+#, php-format
+msgid "Check which page triggered it (sample) and which code ran it (%s)."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:99
+msgid "Update that plugin; check its settings for logging/statistics options you do not need."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:100
+msgid "Use a persistent object cache (Redis/Memcached) if your host offers it."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:101
+msgid "Send the query and timing to the plugin developer if it continues."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:112
+msgid "Plugin or theme code changed without going through the WordPress admin (for example over FTP, SSH, a deployment tool or by an attacker)."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:113
+msgid "A developer or your host deployed files directly, or someone with server access changed them."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:115
+msgid "Ask your developer or host whether they made this change."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:116
+msgid "If nobody did, run the Integrity check and change all passwords (WordPress, hosting, FTP, database)."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:117
+msgid "Mark the issue as resolved once you have confirmed it."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:128
+msgid "Reported by the WordPress Site Health check."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:129
+msgid "Open Tools → Site Health for details and the recommended action."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:137
+msgid "This message was written to the error log. It may or may not affect visitors."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:138
+msgid "Not enough detail for a built-in explanation."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:139
+msgid "Use \"Explain with DEV3 AI\", or send the message and the file it mentions to your developer."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:178
+msgid "PHP ran out of memory while building a page, so the request stopped (visitors may see a blank page or \"critical error\")."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:179
+msgid "The memory limit is too low for your plugins, or one plugin loads far too much data at once (big imports, reports, image processing)."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:181
+msgid "Raise WP_MEMORY_LIMIT in wp-config.php to 256M, or ask your host to raise memory_limit."
+msgstr ""
+
+#. translators: %s: component.
+#: includes/Analyze/Knowledge_Base.php:183
+#, php-format
+msgid "If it keeps happening at the same place, update %s or contact its developer."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:184
+msgid "Check whether the error happens on one specific page or action (see the samples)."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:188
+msgid "A request took longer than the server allows and was stopped half way."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:189
+msgid "A slow external service, a heavy import/export, or a slow database query."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:191
+msgid "Find the action that triggers it (see the samples) and run it in smaller batches."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:192
+msgid "Ask your host to raise max_execution_time for admin tasks, or to check server load."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:196
+msgid "Code tried to use a function or class that does not exist, so the page crashed."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:197
+msgid "Usually a plugin that needs another plugin (or a newer PHP/WordPress version) that is missing, or an incomplete update."
+msgstr ""
+
+#. translators: %s: component.
+#: includes/Analyze/Knowledge_Base.php:200
+#, php-format
+msgid "Re-install or update %s."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:201
+msgid "Check the plugin's requirements (other plugins, PHP version)."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:202
+msgid "If the site is down, deactivate the plugin (one-click fix or rename its folder over FTP)."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:206
+msgid "Some code printed output too early, so WordPress could not send redirects or cookies. Logins and redirects can break."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:207
+msgid "Extra spaces or blank lines before \"<?php\" or after \"?>\" in a PHP file, or a plugin echoing output on the wrong hook."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:209
+msgid "Look at the \"output started at\" file in the message: that file is the cause, not the one that failed."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:210
+msgid "Remove whitespace before \"<?php\" / after a closing \"?>\" in that file (often functions.php or wp-config.php)."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:214
+msgid "Code read a value that was not set. It usually keeps working, but it fills your log and can hide a real bug."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:215
+msgid "A small coding mistake, often exposed by a newer PHP version."
+msgstr ""
+
+#. translators: %s: component.
+#: includes/Analyze/Knowledge_Base.php:218
+#, php-format
+msgid "Update %s; most such warnings are fixed in later versions."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:219
+msgid "If it is your own theme or custom code, ask your developer to check the value before using it (isset / empty)."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:223
+msgid "Code uses something that newer PHP or WordPress versions will remove. Nothing is broken yet."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:224
+msgid "The code was written for older versions."
+msgstr ""
+
+#. translators: %s: component.
+#: includes/Analyze/Knowledge_Base.php:227
+#, php-format
+msgid "Update %s before upgrading PHP or WordPress."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:228
+msgid "You can hide deprecations from collection in Settings if the log gets too noisy."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:232
+msgid "A database table or column that the code expects is missing. Features that use it fail."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:233
+msgid "A plugin was not fully installed or upgraded, or a database was restored from an older backup."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:235
+msgid "Deactivate and re-activate the plugin that owns the table so it can create it."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:236
+msgid "Run the plugin's database update if it shows a notice."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:240
+msgid "The database server was overloaded or dropped the connection for a moment."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:241
+msgid "Traffic spikes, heavy background jobs or a small hosting plan."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:243
+msgid "Check whether it lines up with imports, backups or traffic spikes."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:244
+msgid "Ask your host about database limits and slow queries."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:248
+msgid "The site could not reach an external service (update server, payment gateway, API) in time."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:249
+msgid "The remote service was slow or down, or your server blocks outgoing connections / has outdated SSL certificates."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:251
+msgid "Check whether it happens only now and then (remote service) or always (server configuration)."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:252
+msgid "Ask your host to check outgoing connections, DNS and the CA certificate bundle."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:256
+msgid "A PHP file contains a typo, so PHP cannot read it at all. Every page that loads this file fails."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:257
+msgid "Usually a manual edit (theme editor, FTP) or a broken upload."
+msgstr ""
+
+#. translators: %s: file.
+#: includes/Analyze/Knowledge_Base.php:260
+#, php-format
+msgid "Undo the last edit in %s, or restore the file from a backup."
+msgstr ""
+
+#. translators: %s: file.
+#: includes/Analyze/Knowledge_Base.php:260
+msgid "the file"
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:261
+msgid "If it is a plugin, re-install it from a fresh download."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:279
+msgid "A fatal error stopped PHP. Visitors on that page saw an error or a blank page."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:280
+msgid "A PHP file contains a syntax error and cannot be loaded."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:281
+msgid "A database query failed. The feature that ran it may show missing or wrong data."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:282
+msgid "PHP warned about a problem but kept running. The feature may behave oddly."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:283
+msgid "A minor coding issue. It does not break the site but fills the log."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:288
+msgid "An entry in the PHP error log."
+msgstr ""
+
+#. translators: %s: component.
+#: includes/Analyze/Knowledge_Base.php:290
+#, php-format
+msgid "Raised by %s."
+msgstr ""
+
+#. translators: %s: component.
+#: includes/Analyze/Knowledge_Base.php:293
+#, php-format
+msgid "Update %s to the latest version."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:294
+msgid "If it continues, send the message, the file/line and the samples to its developer."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:312
+msgid "One address is trying many passwords on your login page. This is an automated attack that guesses weak passwords."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:313
+msgid "People or bots tried to log in with wrong user names or passwords. A few are normal (typos); many are bots guessing passwords."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:314
+msgid "Bots scan every WordPress site for wp-login.php and xmlrpc.php and try common user names like \"admin\"."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:316
+msgid "Make sure every administrator uses a long, unique password and turn on two-factor authentication."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:317
+msgid "Do not use \"admin\" as a user name."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:318
+msgid "Block the worst addresses on the Security screen (needs confirmation) or with your host/CDN firewall."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:319
+msgid "If you do not use the mobile app or Jetpack, disable XML-RPC."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:332
+msgid "Bots tried to read files outside the web folder with \"../\" in the address. WordPress blocks this, but it shows someone is scanning your site for holes."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:333
+msgid "Bots tried to read server system files such as /etc/passwd. This only works on badly configured servers, but it is a clear attack."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:334
+msgid "Requests contained SQL injection patterns (\"union select\", \"sleep(\"). Attackers test whether a plugin passes input straight into database queries."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:335
+msgid "Requests contained script code. Attackers test whether a form or page prints input back without escaping it."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:336
+msgid "Bots looked for files that should never be public: backups, .env files, .git folders, phpinfo pages."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:337
+msgid "Someone listed user names through \"?author=1\". Knowing a user name makes password guessing easier."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:338
+msgid "Someone listed user names through the REST API users endpoint."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:339
+msgid "One address requested many pages that do not exist in a short time. This is typical for vulnerability scanners."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:342
+msgid "Suspicious requests were seen."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:343
+msgid "Automated scanners probe every site on the internet. Seeing them is normal; what matters is that nothing they look for exists or works."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:345
+msgid "Keep WordPress, plugins and themes updated (see the Updates issues)."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:346
+msgid "Make sure no backups, .env or .sql files are stored inside the web folder."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:347
+msgid "If one address keeps coming back, block it on the Security screen or in your host/CDN firewall."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:365
+msgid "Some WordPress core files are different from the official files on wordpress.org. Core files should never be edited, so this is a strong sign of a hack or a risky manual change."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:366
+msgid "Malware injected into core files, an unsafe manual edit, or a failed update."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:368
+msgid "Make a backup (keep the changed files for investigation)."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:369
+msgid "Restore each changed file from wordpress.org (one-click fix with confirmation, or Dashboard → Updates → Re-install)."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:370
+msgid "Change all passwords (WordPress admins, hosting, FTP/SFTP, database) and check for unknown admin users."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:371
+msgid "Run the Integrity check again; if files change back, ask your host or a security service to clean the site."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:381
+msgid "There are PHP files in wp-admin or wp-includes that are not part of WordPress. Attackers often hide backdoors there."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:382
+msgid "A backdoor uploaded by an attacker, or leftovers of an old WordPress version or a misbehaving plugin."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:384
+msgid "Look at each file with your host or developer (do not open it in a browser)."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:385
+msgid "Re-install WordPress from Dashboard → Updates, then delete the unknown files."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:386
+msgid "Change all passwords and review administrator accounts."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:393
+msgid "Files of this plugin differ from its official wordpress.org release. It may have been customised, partly updated, or infected."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:394
+msgid "Manual customisation, a failed update, or malware added to the plugin folder (added PHP files are the most suspicious)."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:396
+msgid "Ask your developer whether the plugin was customised on purpose."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:397
+msgid "If not, delete the plugin and install a fresh copy from wordpress.org (settings are kept in the database)."
+msgstr ""
+
+#: includes/Analyze/Knowledge_Base.php:398
+msgid "Run the Integrity check again."
+msgstr ""
+
+#. translators: %s: plugin name.
+#: includes/Collect/Change_Logger.php:71
+#, php-format
+msgid "Plugin activated: %s"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: includes/Collect/Change_Logger.php:82
+#, php-format
+msgid "Plugin deactivated: %s"
+msgstr ""
+
+#. translators: %s: plugin file.
+#: includes/Collect/Change_Logger.php:94
+#, php-format
+msgid "Plugin deleted: %s"
+msgstr ""
+
+#. translators: %s: theme name.
+#: includes/Collect/Change_Logger.php:109
+#, php-format
+msgid "Theme switched to %s"
+msgstr ""
+
+#. translators: %s: theme.
+#: includes/Collect/Change_Logger.php:126
+#, php-format
+msgid "Theme deleted: %s"
+msgstr ""
+
+#. translators: 1: plugin name, 2: version.
+#: includes/Collect/Change_Logger.php:147
+#, php-format
+msgid "Plugin installed: %1$s %2$s"
+msgstr ""
+
+#. translators: 1: plugin name, 2: version.
+#: includes/Collect/Change_Logger.php:147
+#, php-format
+msgid "Plugin updated: %1$s to %2$s"
+msgstr ""
+
+#. translators: 1: theme name, 2: version.
+#: includes/Collect/Change_Logger.php:156
+#, php-format
+msgid "Theme installed: %1$s %2$s"
+msgstr ""
+
+#. translators: 1: theme name, 2: version.
+#: includes/Collect/Change_Logger.php:156
+#, php-format
+msgid "Theme updated: %1$s to %2$s"
+msgstr ""
+
+#. translators: %s: version.
+#: includes/Collect/Change_Logger.php:176
+#, php-format
+msgid "WordPress updated to %s"
+msgstr ""
+
+#. translators: 1: plugin, 2: version.
+#: includes/Collect/Change_Logger.php:230
+#, php-format
+msgid "Plugin added outside WordPress: %1$s %2$s"
+msgstr ""
+
+#. translators: 1: plugin, 2: old version, 3: new version.
+#: includes/Collect/Change_Logger.php:233
+#, php-format
+msgid "Plugin version changed outside WordPress: %1$s %2$s → %3$s"
+msgstr ""
+
+#. translators: %s: plugin.
+#: includes/Collect/Change_Logger.php:236
+#, php-format
+msgid "Plugin activated outside the admin: %s"
+msgstr ""
+
+#. translators: %s: plugin.
+#: includes/Collect/Change_Logger.php:236
+#, php-format
+msgid "Plugin deactivated outside the admin: %s"
+msgstr ""
+
+#. translators: %s: plugin file.
+#: includes/Collect/Change_Logger.php:242
+#, php-format
+msgid "Plugin removed outside WordPress: %s"
+msgstr ""
+
+#. translators: 1: theme, 2: old, 3: new.
+#: includes/Collect/Change_Logger.php:248
+#, php-format
+msgid "Theme version changed outside WordPress: %1$s %2$s → %3$s"
+msgstr ""
+
+#. translators: %s: theme.
+#: includes/Collect/Change_Logger.php:251
+#, php-format
+msgid "Theme added outside WordPress: %s"
+msgstr ""
+
+#. translators: 1: old, 2: new.
+#: includes/Collect/Change_Logger.php:256
+#, php-format
+msgid "WordPress version changed: %1$s → %2$s"
+msgstr ""
+
+#: includes/Collect/Change_Logger.php:279
+msgid "Code changed without going through the WordPress admin. Confirm that you or your developer made this change."
+msgstr ""
+
+#: includes/Collect/Collector.php:65
+msgid "Switched off in Settings."
+msgstr ""
+
+#: includes/Collect/Collector.php:156
+msgid "Scheduled checks are off."
+msgstr ""
+
+#: includes/Collect/Collector.php:169
+msgid "The integrity check runs in the background."
+msgstr ""
+
+#. translators: %d: count.
+#: includes/Collect/Cron_Health.php:118
+#, php-format
+msgid "%d scheduled task is overdue"
+msgid_plural "%d scheduled tasks are overdue"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/Collect/Cron_Health.php:119
+msgid "WP-Cron is disabled (DISABLE_WP_CRON) and the server cron job is not running often enough."
+msgstr ""
+
+#: includes/Collect/Cron_Health.php:119
+msgid "Scheduled tasks are not running on time. Scheduled posts, emails, backups and updates may be late."
+msgstr ""
+
+#. translators: %s: hook.
+#: includes/Collect/Cron_Health.php:134
+#, php-format
+msgid "Scheduled task without code: %s"
+msgstr ""
+
+#: includes/Collect/Cron_Health.php:135
+msgid "This task is scheduled but nothing handles it, usually because the plugin that added it was removed."
+msgstr ""
+
+#: includes/Collect/Cron_Health.php:148
+msgid "WP-Cron does not seem to run"
+msgstr ""
+
+#: includes/Collect/Cron_Health.php:149
+msgid "Our hourly check has not run for more than three hours."
+msgstr ""
+
+#. translators: %d: files.
+#: includes/Collect/Integrity.php:169
+#, php-format
+msgid "%d WordPress core file does not match wordpress.org"
+msgid_plural "%d WordPress core files do not match wordpress.org"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/Collect/Integrity.php:170
+msgid "Core files should never change. A modified core file is a common sign of a hacked site or an unsafe manual edit."
+msgstr ""
+
+#. translators: %d: files.
+#: includes/Collect/Integrity.php:190
+#, php-format
+msgid "%d unknown PHP file inside wp-admin or wp-includes"
+msgid_plural "%d unknown PHP files inside wp-admin or wp-includes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/Collect/Integrity.php:191
+msgid "These folders contain only WordPress files. Extra PHP files there are often backdoors left by an attacker."
+msgstr ""
+
+#. translators: 1: plugin, 2: files.
+#: includes/Collect/Integrity.php:211
+#, php-format
+msgid "%1$s: %2$d files differ from wordpress.org"
+msgstr ""
+
+#: includes/Collect/Integrity.php:212
+msgid "Plugin files differ from the official release of this version."
+msgstr ""
+
+#: includes/Collect/Integrity.php:291
+msgid "Could not download the core checksums from wordpress.org."
+msgstr ""
+
+#: includes/Collect/Integrity.php:359
+msgid "Single-file plugins and plugins without a version cannot be verified."
+msgstr ""
+
+#: includes/Collect/Integrity.php:378
+msgid "Not hosted on wordpress.org (premium or custom plugin), so there are no official checksums."
+msgstr ""
+
+#: includes/Collect/Log_Parser.php:207
+msgid "Fatal error"
+msgstr ""
+
+#: includes/Collect/Log_Parser.php:208
+msgid "Parse error"
+msgstr ""
+
+#: includes/Collect/Log_Parser.php:209
+msgid "Database error"
+msgstr ""
+
+#: includes/Collect/Log_Parser.php:210
+msgid "PHP warning"
+msgstr ""
+
+#: includes/Collect/Log_Parser.php:211
+msgid "PHP notice"
+msgstr ""
+
+#: includes/Collect/Log_Parser.php:212
+msgid "Deprecated"
+msgstr ""
+
+#: includes/Collect/Log_Parser.php:213
+msgid "Log entry"
+msgstr ""
+
+#: includes/Collect/Php_Log.php:66
+msgid "PHP error logging is not enabled. Add WP_DEBUG, WP_DEBUG_LOG and WP_DEBUG_DISPLAY (false) to wp-config.php, or set a custom log path in Settings."
+msgstr ""
+
+#: includes/Collect/Php_Log.php:77
+msgid "Logging is enabled, but the log file does not exist yet. It is created with the first error."
+msgstr ""
+
+#: includes/Collect/Php_Log.php:84
+msgid "The log file exists but PHP cannot read it. Ask your host to fix the file permissions."
+msgstr ""
+
+#: includes/Collect/Php_Log.php:98
+msgid "The log path must point to a .log or .txt file."
+msgstr ""
+
+#: includes/Collect/Php_Log.php:101
+msgid "The log path must not be a symbolic link."
+msgstr ""
+
+#: includes/Collect/Security_Logger.php:47
+msgid "Path traversal probes"
+msgstr ""
+
+#: includes/Collect/Security_Logger.php:48
+msgid "System file probes (/etc/passwd)"
+msgstr ""
+
+#: includes/Collect/Security_Logger.php:49
+msgid "SQL injection attempts"
+msgstr ""
+
+#: includes/Collect/Security_Logger.php:50
+msgid "Script injection attempts"
+msgstr ""
+
+#: includes/Collect/Security_Logger.php:51
+msgid "Probes for sensitive files (.env, backups, .git)"
+msgstr ""
+
+#: includes/Collect/Security_Logger.php:52
+msgid "User enumeration (?author=)"
+msgstr ""
+
+#: includes/Collect/Security_Logger.php:53
+msgid "User enumeration (REST users endpoint)"
+msgstr ""
+
+#: includes/Collect/Security_Logger.php:54
+msgid "404 floods (scanners)"
+msgstr ""
+
+#. translators: %s: rule label.
+#: includes/Collect/Security_Logger.php:149
+#, php-format
+msgid "Suspicious requests: %s"
+msgstr ""
+
+#: includes/Collect/Security_Logger.php:203
+msgid "Wrong password for an existing user"
+msgstr ""
+
+#: includes/Collect/Security_Logger.php:203
+msgid "Unknown user name"
+msgstr ""
+
+#: includes/Collect/Security_Logger.php:217
+msgid "Failed login attempts"
+msgstr ""
+
+#: includes/Collect/Security_Logger.php:218
+msgid "Someone tried to log in with a wrong user name or password."
+msgstr ""
+
+#: includes/Collect/Security_Logger.php:230
+msgid "Brute-force login attack"
+msgstr ""
+
+#. translators: %d: threshold.
+#: includes/Collect/Security_Logger.php:232
+#, php-format
+msgid "One address failed to log in %d or more times within an hour."
+msgstr ""
+
+#. translators: %d: failed attempts.
+#: includes/Collect/Security_Logger.php:267
+#, php-format
+msgid "Logged in after %d failed attempt"
+msgid_plural "Logged in after %d failed attempts"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/Collect/Security_Logger.php:268
+msgid "Administrator logged in"
+msgstr ""
+
+#: includes/Collect/Slow_Queries.php:119
+msgid "Slow-query capture needs SAVEQUERIES in wp-config.php (development/staging only; it costs memory)."
+msgstr ""
+
+#. translators: %d: milliseconds.
+#: includes/Collect/Slow_Queries.php:136
+#, php-format
+msgid "Slow database query (%d ms)"
+msgstr ""
+
+#. translators: 1: current, 2: new.
+#: includes/Collect/Updates.php:133
+#, php-format
+msgid "WordPress %1$s can be updated to %2$s"
+msgstr ""
+
+#: includes/Collect/Updates.php:134
+msgid "A maintenance/security release of WordPress is available."
+msgstr ""
+
+#: includes/Collect/Updates.php:134
+msgid "A new major version of WordPress is available."
+msgstr ""
+
+#. translators: 1: plugin, 2: current, 3: new.
+#: includes/Collect/Updates.php:149
+#, php-format
+msgid "Update available: %1$s %2$s → %3$s"
+msgstr ""
+
+#: includes/Collect/Updates.php:150
+msgid "Plugin updates often contain security fixes."
+msgstr ""
+
+#. translators: 1: theme, 2: current, 3: new.
+#: includes/Collect/Updates.php:165
+#, php-format
+msgid "Theme update available: %1$s %2$s → %3$s"
+msgstr ""
+
+#: includes/Collect/Updates.php:166
+msgid "Theme updates often contain security fixes."
+msgstr ""
+
+#. translators: %d: count.
+#: includes/Collect/Updates.php:181
+#, php-format
+msgid "%d inactive plugins are installed"
+msgstr ""
+
+#: includes/Collect/Updates.php:182
+msgid "Inactive plugins still contain code that can be attacked. Delete the ones you do not need."
+msgstr ""
+
+#. translators: %s: version.
+#: includes/Collect/Updates.php:197
+#, php-format
+msgid "PHP %s no longer receives security updates"
+msgstr ""
+
+#: includes/Collect/Updates.php:198
+msgid "Ask your host to move the site to PHP 8.1 or newer."
+msgstr ""
+
+#: includes/Core3/Api/Ai.php:212
+msgid "Unsupported image type."
+msgstr ""
+
+#: includes/Core3/Api/Ai.php:216
+msgid "The image data is invalid."
+msgstr ""
+
+#: includes/Core3/Api/Ai.php:292
+msgid "AI features are turned off."
+msgstr ""
+
+#: includes/Core3/Api/Ai.php:292
+msgid "Turn AI back on in API Config."
+msgstr ""
+
+#: includes/Core3/Api/Ai.php:294
+msgid "Storefront AI is turned off."
+msgstr ""
+
+#: includes/Core3/Api/Ai.php:294
+msgid "Turn storefront AI back on in API Config."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:49
+msgid "No Gemini API key is configured."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:50
+msgid "Open the plugin settings → API Config and paste a key from Google AI Studio."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:63
+msgid "AI paused: the monthly AI budget is reached."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:64
+msgid "Raise the monthly cap in API Config, or wait until the budget resets on the 1st of next month."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:80
+msgid "The AI service took too long to respond."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:81
+msgid "Try again, shorten the prompt, lower Max Output Tokens, or switch to the faster model."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:89
+msgid "Your server could not reach the AI service (Google Gemini API)."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:90
+msgid "Check the server's internet connection or firewall (outbound HTTPS to generativelanguage.googleapis.com)."
+msgstr ""
+
+#. translators: %s: transport error message.
+#: includes/Core3/Api/Api_Error.php:98
+#, php-format
+msgid "Request to the AI service failed: %s"
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:99
+#: includes/Core3/Api/Gemini_Client.php:250
+#: includes/Core3/Api/Gemini_Client.php:422
+msgid "Try again in a moment."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:128
+msgid "The Gemini API key is not valid."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:129
+msgid "Create a new key in Google AI Studio and paste it in API Config."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:137
+msgid "Your Gemini quota is exhausted."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:137
+msgid "AI rate limit reached."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:139
+msgid "Wait for the quota to reset, enable billing on your Google Cloud project, or switch to a model with remaining quota."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:140
+msgid "Wait a few seconds and try again."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:148
+msgid "This API key is not allowed to use Gemini."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:149
+msgid "Enable the Generative Language API for the key's project, and check any key restrictions (HTTP referrer / IP)."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:156
+msgid "The selected Gemini model is not available."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:157
+msgid "Pick another model in API Config — click \"Refresh models\" to load the ones your key can use."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:164
+msgid "The AI service is not available in your server's region."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:165
+msgid "Host the site in a supported region or use a key from a supported project."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:172
+msgid "The AI service is temporarily unavailable."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:173
+msgid "This is on Google's side. Try again shortly or switch models."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:180
+msgid "The AI service rejected the request."
+msgstr ""
+
+#: includes/Core3/Api/Api_Error.php:181
+msgid "Adjust the prompt or settings and try again."
+msgstr ""
+
+#: includes/Core3/Api/Gemini_Client.php:250
+msgid "The AI returned an incomplete embedding batch."
+msgstr ""
+
+#: includes/Core3/Api/Gemini_Client.php:368
+msgid "The AI blocked this image request for safety reasons."
+msgstr ""
+
+#: includes/Core3/Api/Gemini_Client.php:368
+msgid "The AI did not return an image."
+msgstr ""
+
+#: includes/Core3/Api/Gemini_Client.php:369
+#: includes/Core3/Api/Gemini_Client.php:472
+#: includes/Core3/Api/Gemini_Client.php:508
+msgid "Rephrase the prompt and try again."
+msgstr ""
+
+#: includes/Core3/Api/Gemini_Client.php:369
+msgid "Try again, or describe the image more concretely."
+msgstr ""
+
+#: includes/Core3/Api/Gemini_Client.php:421
+msgid "The AI returned malformed data."
+msgstr ""
+
+#: includes/Core3/Api/Gemini_Client.php:471
+msgid "The AI blocked this request for safety reasons."
+msgstr ""
+
+#: includes/Core3/Api/Gemini_Client.php:507
+msgid "The AI stopped because the response was flagged."
+msgstr ""
+
+#: includes/Core3/Api/Gemini_Client.php:515
+msgid "The AI ran out of output tokens before writing an answer."
+msgstr ""
+
+#: includes/Core3/Api/Gemini_Client.php:516
+msgid "Increase Max Output Tokens in API Config, or set Reasoning to \"Low\"."
+msgstr ""
+
+#: includes/Core3/Api/Gemini_Client.php:523
+msgid "The AI returned an empty response."
+msgstr ""
+
+#: includes/Core3/Api/Gemini_Client.php:524
+msgid "Try again or rephrase the prompt."
+msgstr ""
+
+#: includes/Core3/Api/Prompts.php:124
+msgid "Unknown prompt template."
+msgstr ""
+
+#: includes/Core3/Core/Jobs.php:90
+msgid "Unknown job type."
+msgstr ""
+
+#: includes/Core3/Core/Jobs.php:116
+msgid "The job could not be saved."
+msgstr ""
+
+#: includes/Core3/Core/Jobs.php:238
+#: build/admin.js:1
+msgid "Failed"
+msgstr ""
+
+#: includes/Core3/Core/Jobs.php:339
+#: includes/Core3/Rest/Core_Controller.php:112
+msgid "Job not found."
+msgstr ""
+
+#: includes/Core3/Core/Privacy.php:33
+#: includes/Core3/Core/Privacy.php:34
+#: includes/Core3/Core/Privacy.php:165
+msgid "AI usage log"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: includes/Core3/Core/Privacy.php:85
+#, php-format
+msgid "This site uses %s, which sends the content needed for AI features (for example product details, reviews or form text) to Google Gemini, operated by Google LLC, as a data processor. Only the fields needed for the requested feature are sent. Google's terms and privacy policy apply: https://ai.google.dev/gemini-api/terms"
+msgstr ""
+
+#: includes/Core3/Core/Privacy.php:87
+msgid "The plugin keeps a usage log (time, feature, token counts and the user account that triggered the request) to show AI usage and costs to administrators. It does not store the prompts."
+msgstr ""
+
+#: includes/Core3/Core/Privacy.php:169
+msgid "Feature"
+msgstr ""
+
+#: includes/Core3/Core/Privacy.php:173
+#: build/admin.js:1
+msgid "Model"
+msgstr ""
+
+#: includes/Core3/Core/Privacy.php:177
+#: build/admin.js:1
+msgid "Tokens"
+msgstr ""
+
+#: includes/Core3/Core/Privacy.php:181
+#: includes/Privacy_Data.php:67
+msgid "Date"
+msgstr ""
+
+#: includes/Core3/Data/Usage_Repository.php:194
+msgid "Deleted user"
+msgstr ""
+
+#: includes/Core3/Rest/Base_Controller.php:72
+msgid "Your session has expired. Reload the editor and try again."
+msgstr ""
+
+#: includes/Core3/Rest/Base_Controller.php:75
+#: includes/Core3/Rest/Core_Controller.php:115
+msgid "You do not have permission to do that."
+msgstr ""
+
+#: includes/Core3/Rest/Base_Controller.php:94
+msgid "Cross-origin requests are not allowed."
+msgstr ""
+
+#: includes/Core3/Rest/Base_Controller.php:104
+msgid "Too many requests. Please wait a moment."
+msgstr ""
+
+#: includes/Fix/Firewall.php:46
+msgid "Access denied."
+msgstr ""
+
+#: includes/Fix/Firewall.php:46
+msgid "Forbidden"
+msgstr ""
+
+#. translators: %s: plugin.
+#: includes/Fix/Fixes.php:57
+#: includes/Fix/Fixes.php:295
+#, php-format
+msgid "Deactivate %s"
+msgstr ""
+
+#. translators: %s: file.
+#: includes/Fix/Fixes.php:67
+#: includes/Fix/Fixes.php:320
+#, php-format
+msgid "Restore %s from wordpress.org"
+msgstr ""
+
+#. translators: %s: IP.
+#: includes/Fix/Fixes.php:76
+#: includes/Fix/Fixes.php:344
+#, php-format
+msgid "Block %s"
+msgstr ""
+
+#: includes/Fix/Fixes.php:83
+#: includes/Fix/Fixes.php:379
+msgid "Disable XML-RPC"
+msgstr ""
+
+#. translators: %s: hook.
+#: includes/Fix/Fixes.php:91
+#: includes/Fix/Fixes.php:367
+#, php-format
+msgid "Remove scheduled task %s"
+msgstr ""
+
+#: includes/Fix/Fixes.php:142
+msgid "Please confirm the change first."
+msgstr ""
+
+#: includes/Fix/Fixes.php:147
+msgid "This confirmation has expired. Preview the fix again."
+msgstr ""
+
+#: includes/Fix/Fixes.php:203
+msgid "Fix not found."
+msgstr ""
+
+#: includes/Fix/Fixes.php:207
+msgid "This fix was already undone."
+msgstr ""
+
+#: includes/Fix/Fixes.php:219
+msgid "The backup of this file is gone, so it cannot be undone."
+msgstr ""
+
+#: includes/Fix/Fixes.php:222
+msgid "The file could not be written."
+msgstr ""
+
+#: includes/Fix/Fixes.php:278
+#: includes/Fix/Fixes.php:386
+msgid "Unknown fix."
+msgstr ""
+
+#: includes/Fix/Fixes.php:285
+msgid "That plugin is not active."
+msgstr ""
+
+#: includes/Fix/Fixes.php:288
+msgid "This plugin cannot deactivate itself from here."
+msgstr ""
+
+#: includes/Fix/Fixes.php:296
+msgid "The plugin is switched off. Its files and settings stay on the site."
+msgstr ""
+
+#: includes/Fix/Fixes.php:298
+msgid "Features of this plugin (shortcodes, blocks, payment methods, forms…) stop working until it is activated again."
+msgstr ""
+
+#: includes/Fix/Fixes.php:299
+msgid "Errors caused by the plugin stop."
+msgstr ""
+
+#. translators: %s: plugin.
+#: includes/Fix/Fixes.php:303
+#, php-format
+msgid "%s was deactivated."
+msgstr ""
+
+#: includes/Fix/Fixes.php:310
+msgid "That is not a WordPress core file."
+msgstr ""
+
+#: includes/Fix/Fixes.php:314
+msgid "That file already matches wordpress.org."
+msgstr ""
+
+#: includes/Fix/Fixes.php:321
+msgid "The official copy of this file is downloaded, checked against the wordpress.org checksum and written over the changed file. A backup of the current file is kept first."
+msgstr ""
+
+#: includes/Fix/Fixes.php:323
+msgid "Custom edits in this file are lost (the backup keeps them)."
+msgstr ""
+
+#: includes/Fix/Fixes.php:324
+msgid "If the change was malware, other infected files may remain: change passwords and run the check again."
+msgstr ""
+
+#. translators: %s: file.
+#: includes/Fix/Fixes.php:328
+#, php-format
+msgid "%s was restored."
+msgstr ""
+
+#: includes/Fix/Fixes.php:334
+msgid "That is not a valid IP address."
+msgstr ""
+
+#: includes/Fix/Fixes.php:337
+msgid "That is your own IP address. Blocking it would lock you out."
+msgstr ""
+
+#. translators: %d: days.
+#: includes/Fix/Fixes.php:346
+#, php-format
+msgid "Requests from this address get \"403 Forbidden\" for %d day."
+msgid_plural "Requests from this address get \"403 Forbidden\" for %d days."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/Fix/Fixes.php:348
+msgid "If the address is shared (office, mobile network, VPN), real visitors behind it are blocked too."
+msgstr ""
+
+#: includes/Fix/Fixes.php:349
+msgid "Behind a CDN or proxy, set the trusted IP header first, or every visitor may share one address."
+msgstr ""
+
+#. translators: %s: IP.
+#: includes/Fix/Fixes.php:353
+#, php-format
+msgid "%s is blocked."
+msgstr ""
+
+#: includes/Fix/Fixes.php:358
+msgid "That scheduled task does not exist."
+msgstr ""
+
+#: includes/Fix/Fixes.php:361
+msgid "Code still handles this task, so it is not removed."
+msgstr ""
+
+#. translators: %d: count.
+#: includes/Fix/Fixes.php:369
+#, php-format
+msgid "%d scheduled run of this task is removed."
+msgid_plural "%d scheduled runs of this task are removed."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/Fix/Fixes.php:370
+msgid "Nothing handles this task today, so nothing stops working. A plugin that is re-installed later schedules it again."
+msgstr ""
+
+#. translators: %s: hook.
+#: includes/Fix/Fixes.php:373
+#, php-format
+msgid "%s was removed."
+msgstr ""
+
+#: includes/Fix/Fixes.php:380
+msgid "xmlrpc.php stops accepting logins and method calls. Attackers use it to try many passwords in one request."
+msgstr ""
+
+#: includes/Fix/Fixes.php:381
+msgid "The old WordPress mobile app, Jetpack and some remote publishing tools need XML-RPC. Do not disable it if you use them."
+msgstr ""
+
+#: includes/Fix/Fixes.php:383
+msgid "XML-RPC is disabled."
+msgstr ""
+
+#: includes/Fix/Fixes.php:404
+msgid "The official file could not be downloaded from wordpress.org."
+msgstr ""
+
+#: includes/Fix/Fixes.php:408
+msgid "The downloaded file did not match the official checksum, so nothing was changed."
+msgstr ""
+
+#: includes/Fix/Fixes.php:415
+msgid "A backup of the current file could not be written, so nothing was changed."
+msgstr ""
+
+#: includes/Fix/Fixes.php:419
+msgid "The file could not be written. Check file permissions."
+msgstr ""
+
+#: includes/Fix/Fixes.php:423
+msgid "Blocked from DEV3 AI Site Health"
+msgstr ""
+
+#: includes/Fix/Fixes.php:512
+msgid "Read-only mode is on: one-click fixes are switched off. Turn on \"Allow one-click fixes\" in Settings to use them."
+msgstr ""
+
+#: includes/Privacy_Data.php:24
+#: includes/Privacy_Data.php:25
+#: includes/Privacy_Data.php:51
+#: includes/Rest/Admin_Controller.php:98
+msgid "Security log"
+msgstr ""
+
+#: includes/Privacy_Data.php:55
+msgid "Event"
+msgstr ""
+
+#: includes/Privacy_Data.php:59
+msgid "IP address"
+msgstr ""
+
+#: includes/Privacy_Data.php:63
+msgid "Path"
+msgstr ""
+
+#: includes/Report/Alerts.php:78
+msgid "New fatal PHP error"
+msgstr ""
+
+#: includes/Report/Alerts.php:81
+msgid "Files changed: integrity check failed"
+msgstr ""
+
+#: includes/Report/Alerts.php:92
+msgid "New critical issue"
+msgstr ""
+
+#. translators: %d: score.
+#: includes/Report/Alerts.php:101
+#, php-format
+msgid "Health score dropped to %d"
+msgstr ""
+
+#. translators: 1: score, 2: threshold.
+#: includes/Report/Alerts.php:104
+#, php-format
+msgid "The health score is %1$d, below your alert threshold of %2$d."
+msgstr ""
+
+#. translators: %d: count.
+#: includes/Report/Alerts.php:132
+#, php-format
+msgid "%d failed logins in the last hour"
+msgstr ""
+
+#. translators: %d: count.
+#: includes/Report/Alerts.php:145
+#, php-format
+msgid "%d suspicious requests in the last hour"
+msgstr ""
+
+#: includes/Report/Alerts.php:198
+msgid "Open the issues"
+msgstr ""
+
+#. translators: 1: site name, 2: subject.
+#: includes/Report/Alerts.php:202
+#, php-format
+msgid "[%1$s] Alert: %2$s"
+msgstr ""
+
+#. translators: 1: count, 2: top addresses.
+#: includes/Report/Alerts.php:237
+#, php-format
+msgid "%1$d events in the last hour. Top addresses: %2$s. You can block addresses on the Security screen (with confirmation)."
+msgstr ""
+
+#: includes/Report/Weekly_Report.php:221
+msgid "same as last week"
+msgstr ""
+
+#. translators: %s: +/- points.
+#: includes/Report/Weekly_Report.php:223
+#, php-format
+msgid "%s points vs last week"
+msgstr ""
+
+#. translators: 1: open issues, 2: critical.
+#: includes/Report/Weekly_Report.php:232
+#, php-format
+msgid "%1$d open issues · %2$d critical"
+msgstr ""
+
+#: includes/Report/Weekly_Report.php:234
+msgid "DEV3 AI summary"
+msgstr ""
+
+#: includes/Report/Weekly_Report.php:237
+msgid "New issues"
+msgstr ""
+
+#: includes/Report/Weekly_Report.php:238
+msgid "Resolved"
+msgstr ""
+
+#: includes/Report/Weekly_Report.php:239
+msgid "Failed logins"
+msgstr ""
+
+#: includes/Report/Weekly_Report.php:240
+msgid "Suspicious requests"
+msgstr ""
+
+#: includes/Report/Weekly_Report.php:247
+msgid "Top open issues"
+msgstr ""
+
+#: includes/Report/Weekly_Report.php:247
+msgid "No open issues. Nice work."
+msgstr ""
+
+#: includes/Report/Weekly_Report.php:249
+msgid "New this week"
+msgstr ""
+
+#: includes/Report/Weekly_Report.php:251
+#: includes/Rest/Admin_Controller.php:101
+msgid "Updates"
+msgstr ""
+
+#: includes/Report/Weekly_Report.php:252
+msgid "Everything is up to date."
+msgstr ""
+
+#: includes/Report/Weekly_Report.php:253
+msgid "Security and integrity"
+msgstr ""
+
+#: includes/Report/Weekly_Report.php:255
+msgid "Most active addresses:"
+msgstr ""
+
+#. translators: 1: modified core files, 2: plugins changed, 3: plugins verified.
+#: includes/Report/Weekly_Report.php:269
+#, php-format
+msgid "Integrity: %1$d core files changed, %2$d plugins differ, %3$d plugins verified."
+msgstr ""
+
+#: includes/Report/Weekly_Report.php:271
+msgid "Integrity: not checked yet."
+msgstr ""
+
+#. translators: 1: overdue tasks, 2: orphan tasks.
+#: includes/Report/Weekly_Report.php:274
+#, php-format
+msgid "Scheduled tasks: %1$d overdue, %2$d without code."
+msgstr ""
+
+#: includes/Report/Weekly_Report.php:275
+msgid "Open the full report"
+msgstr ""
+
+#. translators: 1: site, 2: from, 3: to.
+#: includes/Report/Weekly_Report.php:277
+#, php-format
+msgid "Weekly site health: %1$s (%2$s – %3$s)"
+msgstr ""
+
+#: includes/Report/Weekly_Report.php:314
+msgid "Sent by DEV3 AI Site Health & Security Log Analyst. Change recipients and thresholds under Reports & alerts."
+msgstr ""
+
+#. translators: 1: site, 2: score.
+#: includes/Report/Weekly_Report.php:349
+#, php-format
+msgid "[%1$s] Weekly site health report: score %2$d"
+msgstr ""
+
+#: includes/Rest/Admin_Controller.php:96
+msgid "PHP error log"
+msgstr ""
+
+#: includes/Rest/Admin_Controller.php:97
+msgid "Site Health"
+msgstr ""
+
+#: includes/Rest/Admin_Controller.php:99
+msgid "Plugin & theme changes"
+msgstr ""
+
+#: includes/Rest/Admin_Controller.php:100
+msgid "Changes"
+msgstr ""
+
+#: includes/Rest/Admin_Controller.php:102
+msgid "Cron health"
+msgstr ""
+
+#: includes/Rest/Admin_Controller.php:103
+msgid "Slow queries"
+msgstr ""
+
+#: includes/Rest/Admin_Controller.php:104
+msgid "File integrity"
+msgstr ""
+
+#: includes/Rest/Admin_Controller.php:259
+msgid "Unknown status."
+msgstr ""
+
+#: includes/Rest/Admin_Controller.php:274
+msgid "Pick issues and a status."
+msgstr ""
+
+#: includes/Rest/Admin_Controller.php:377
+msgid "That address is not blocked."
+msgstr ""
+
+#. translators: %s: IP.
+#: includes/Rest/Admin_Controller.php:387
+#, php-format
+msgid "Unblocked %s"
+msgstr ""
+
+#: includes/Rest/Admin_Controller.php:505
+msgid "The email could not be sent. Check the recipients and your site's mail setup (an SMTP plugin helps)."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Request cancelled."
+msgstr ""
+
+#: build/admin.js:1
+msgid "You appear to be offline."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Check your internet connection, then try again."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Could not reach your WordPress site."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Check your connection or reload the editor."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Your session has expired."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Save your work and reload the page."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Something went wrong."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Loading"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Generating…"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Generate with DEV3 AI"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Dismiss"
+msgstr ""
+
+#: build/admin.js:1
+msgid "AI paused: monthly budget reached"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Adjust the cap"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Try again"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Queued"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Running"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Done"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Cancelled"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Background job"
+msgstr ""
+
+#. translators: 1: processed, 2: total, 3: percent
+#: build/admin.js:1
+#, js-format
+msgid "%1$s of %2$s processed (%3$s%%)"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Starting…"
+msgstr ""
+
+#. translators: %s: failed count
+#: build/admin.js:1
+#, js-format
+msgid "%s failed"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Cancel"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Resume"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Retry failed"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Show failed items"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Estimated AI spend this month"
+msgstr ""
+
+#: build/admin.js:1
+msgid "AI paused"
+msgstr ""
+
+#: build/admin.js:1
+msgid "AI off"
+msgstr ""
+
+#. translators: %s: cap
+#: build/admin.js:1
+#, js-format
+msgid "of %s cap"
+msgstr ""
+
+#: build/admin.js:1
+msgid "AI turned off"
+msgstr ""
+
+#: build/admin.js:1
+msgid "AI paused · cap reached"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Near cap"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Monthly AI budget used"
+msgstr ""
+
+#. translators: 1: requests, 2: tokens
+#: build/admin.js:1
+#, js-format
+msgid "%1$s requests · %2$s tokens"
+msgstr ""
+
+#. translators: %s: date
+#: build/admin.js:1
+#, js-format
+msgid "resets %s"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Set a monthly cap"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Dismiss notification"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Choose from list"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Custom model ID…"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Google Gemini API key"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Create a free key in Google AI Studio, paste it here and click “Validate & save”. The key is encrypted in your database and never sent to the browser."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Get an API key"
+msgstr ""
+
+#: build/admin.js:1
+msgid "(opens in a new tab)"
+msgstr ""
+
+#: build/admin.js:1
+msgid "The key is defined by the DEV3SH_GEMINI_API_KEY constant in wp-config.php."
+msgstr ""
+
+#: build/admin.js:1
+msgid "API key"
+msgstr ""
+
+#. translators: %d: number of models
+#: build/admin.js:1
+#, js-format
+msgid "Connected — %d models available to this key."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Validate & save"
+msgstr ""
+
+#: build/admin.js:1
+msgid "API key removed."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Remove key"
+msgstr ""
+
+#: build/admin.js:1
+msgid "OpenSSL is not available on this server, so the key is only obfuscated. Consider defining DEV3SH_GEMINI_API_KEY in wp-config.php instead."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Models & generation"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Fast is used for most tasks; Pro for complex, long-form or structured work."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Refresh models"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Engine settings saved."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Save engine settings"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Fast model"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Recommended: gemini-2.5-flash"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Pro model"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Recommended: gemini-2.5-pro"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Image model"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Used for image generation. Default: gemini-2.5-flash-image"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Embedding model"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Used for semantic search. Default: gemini-embedding-001"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Temperature"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Lower = focused and consistent, higher = more creative (0–1)."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Max output tokens"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Upper limit per answer."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Reasoning"
+msgstr ""
+
+#: build/admin.js:1
+msgid "“Low” keeps generations fast and cheap; “Auto” lets the model think longer."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Low (fast)"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Auto (model decides)"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Budget & safety"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Costs are estimated from token counts and Google’s list prices. Check exact billing in Google AI Studio."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Budget and safety settings saved."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Save budget & safety"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Monthly AI budget cap"
+msgstr ""
+
+#: build/admin.js:1
+msgid "AI pauses when the estimated spend this month reaches the cap. 0 = no cap."
+msgstr ""
+
+#: build/admin.js:1
+msgid "AI features"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Turn off to stop every AI call. The plugin keeps working without AI."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Storefront AI"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Kill switch for visitor-facing AI. Visitors get the non-AI fallback."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Cache AI results"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Reuse answers for identical requests to save tokens."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Mask personal data"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Replace emails, phone and card numbers before text is sent to Google Gemini."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Pagination"
+msgstr ""
+
+#. translators: 1: first row, 2: last row, 3: total rows
+#: build/admin.js:1
+#, js-format
+msgid "%1$s–%2$s of %3$s"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Previous page"
+msgstr ""
+
+#. translators: 1: page, 2: pages
+#: build/admin.js:1
+#, js-format
+msgid "Page %1$s of %2$s"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Next page"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Actions"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Nothing here yet"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Sort by"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Default"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Requests"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Est. cost"
+msgstr ""
+
+#: build/admin.js:1
+msgid "No requests yet"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Token counts come from the AI provider’s usage metadata; costs are estimates. Check exact billing in Google AI Studio / Cloud Console."
+msgstr ""
+
+#: build/admin.js:1
+msgid "Period"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Last 7 days"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Last 30 days"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Last 90 days"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Total tokens"
+msgstr ""
+
+#. translators: 1: input, 2: output
+#: build/admin.js:1
+#, js-format
+msgid "%1$s in · %2$s out"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Avg. response"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Errors"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Requests per day"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Requests per day chart"
+msgstr ""
+
+#. translators: 1: date, 2: requests, 3: tokens
+#: build/admin.js:1
+#, js-format
+msgid "%1$s — %2$s requests, %3$s tokens"
+msgstr ""
+
+#: build/admin.js:1
+msgid "No requests in this period yet"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Usage appears here as soon as an AI feature runs."
+msgstr ""
+
+#: build/admin.js:1
+msgid "By task"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Task"
+msgstr ""
+
+#: build/admin.js:1
+msgid "By model"
+msgstr ""
+
+#: build/admin.js:1
+msgid "By user"
+msgstr ""
+
+#: build/admin.js:1
+msgid "User"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Recent requests"
+msgstr ""
+
+#: build/admin.js:1
+msgid "No requests logged yet"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Time"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Where"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Time (s)"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Status"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Plugin sections"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Section"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Close"
+msgstr ""
